@@ -8,18 +8,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Create input JSON
         id: create-json
-        uses: jsdaniell/create-json@1.1.2
+        uses: jsdaniell/create-json@v1.2.2
         with:
           name: ${{ github.event.client_payload.filename }}
           json: ${{ github.event.client_payload.tokens }}
           dir: 'input'
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
